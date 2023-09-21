@@ -1,0 +1,8 @@
+Result Management Application by Neha Singh.
+
+Used MySQL workbench.
+
+1. SQL Script added in the folder run in MySQL WorkBench.
+2. Used Connection details in App.js (Edit Accordingly)
+3. Open CMD in NodeAssignment, run with "npm start".
+4. localhost:3000

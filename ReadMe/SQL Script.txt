@@ -1,0 +1,9 @@
+CREATE DATABASE `resultmanagement` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+CREATE TABLE `studentsdb` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  `RollNo` varchar(45) NOT NULL,
+  `DOB` varchar(45) NOT NULL,
+  `Score` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
