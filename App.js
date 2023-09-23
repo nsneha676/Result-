@@ -1,31 +1,40 @@
 const express = require('express');
-var app = express();
+const app = express();
 const bodyparser = require('body-parser');
+const mysql = require('mysql');
 
-//configuration
+// Require the configuration file
+const config = require('./config'); // Assuming the config.js file is in the same directory
+
+// Configuration settings
+const dbConfig = config.database; // Use the database configuration
+
+// Configuration for body parser, views, and static files
 app.use(bodyparser.json());
 app.set("view engine", "hbs");
-app.set("views","./view");
+app.set("views", "./view");
 app.use(express.static(__dirname + "/public"));
 
-//SQL Connection
-const mysql = require('mysql');
-var mysqlConnection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password:'root',
-    database: 'ResultManagement'
+// SQL Connection
+const mysqlConnection = mysql.createConnection({
+    host:  database-01.cbz57jnlwyud.ap-south-1.rds.amazonaws.com,
+    user: admin,
+    password: Admin131997,
+    database: database-01,
+    port: 3306
 });
 
-mysqlConnection.connect((err)=>{
-    if(!err)
+mysqlConnection.connect((err) => {
+    if (!err)
         console.log("DB Connection Success");
     else
-        console.log("DB Connection Failed\n Error: "+ JSON.stringify(err,undefined,2));
+        console.log("DB Connection Failed\n Error: " + JSON.stringify(err, undefined, 2));
+});
 
-})
+// ... Rest of your application code
 
-app.listen(3000, ()=> console.log("Running at localhost:3000"));
+
+app.listen(80, ()=> console.log("Running at localhost:3000"));
 
 
 //index - localhost:3000/
